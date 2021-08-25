@@ -1,5 +1,5 @@
 const gridItem = document.querySelectorAll('.grid-item');
-const number = document.querySelector('.number1');
+const number = document.querySelectorAll('.number');
 const cal = document.querySelectorAll('.cal');
 const del = document.querySelector('#del');
 const reset = document.querySelector('#reset');
