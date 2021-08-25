@@ -27,7 +27,6 @@ body{
 }
 
 .grid-item {
-    padding: 20px;
     text-align: center;
 }
 
@@ -38,7 +37,7 @@ body{
     flex-wrap: wrap;
 
 }
-.doubleSpan {
-    grid-column: span 2;
+.double-span {
+    grid-column: span 3;
     height: 90px;
 }
