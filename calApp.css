@@ -1,33 +1,33 @@
-body{ 
-    background-color: #E1F8DC;
+body {
+  background-color: #e1f8dc;
 }
 
 * {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 30px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 30px;
 }
 
 .calculator-box {
-    display: grid;
-    grid-template-columns: repeat(4, 100px);
-    grid-template-rows: repeat(5, 100px);
-    align-content: center;
-    justify-content: center;
-    min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(5, 100px);
+  align-content: center;
+  justify-content: center;
+  min-height: 100vh;
 }
 
 .calculator-box button {
-    background-color: rgb(249, 249, 224);
-    border-color: rgb(251, 255, 255);
-    outline: none;
+  background-color: rgb(249, 249, 224);
+  border-color: rgb(251, 255, 255);
+  outline: none;
 }
 
 .calculator-box button:hover {
-    background-color: #D4F1F9;
+  background-color: #d4f1f9;
 }
 
 .grid-item {
-    text-align: center;
+  text-align: center;
 }
 
 #output {
@@ -42,3 +42,4 @@ body{
     grid-column: span 2;
     height: 90px;
 }
+
