@@ -34,10 +34,11 @@ body{
     grid-column: 1/-1;
     background-color: #D4F1F9;
     display: flex;
-    flex-wrap: wrap;
-
+    align-items: flex-end;
+    word-break: break-all;
 }
+
 .double-span {
-    grid-column: span 3;
+    grid-column: span 2;
     height: 90px;
 }

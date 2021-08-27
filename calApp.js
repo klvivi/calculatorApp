@@ -1,13 +1,19 @@
-const gridItem = document.querySelectorAll('.grid-item');
-const number = document.querySelectorAll('.number');
-const cal = document.querySelectorAll('.cal');
-const del = document.querySelector('#del');
-const reset = document.querySelector('#reset');
-const calculating = document.querySelector('#calculating');
-const result = document.querySelector('#result');
+const number = document.querySelectorAll('[data-num]');
+const cal = document.querySelectorAll('[data-cal]');
+const del = document.querySelector('[data-del]');
+const reset = document.querySelector('[data-reset]');
+const output = document.querySelector('#output');
 
-gridItem.addEventListener('click', function() {
-    alert("clicked");
+number.forEach(button => {
+    button.addEventListener('click', function() {
+        if (output.textContent.length === 0) {
+            output.textContent = button.textContent;
+        }
+        else {
+            output.textContent = output.textContent + button.textContent;
+        }
+    })
 })
+
 
 
