@@ -1,33 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator App</title>
     <link rel="stylesheet" href="calApp.css">
-    <script src="calApp.js"></script>
 </head>
+
 <body>
-    <div class="calculator-box">
-        <div id="output"></div>
-        <button data-num class="grid-item" type="button">7</button>
-        <button data-num class="grid-item" type="button">8</button>
-        <button data-num class="grid-item" type="button">9</button>
-        <button data-del class="grid-item" type="button">DEL</button>
-        <button data-num class="grid-item" type="button">4</button>
-        <button data-num class="grid-item" type="button">5</button>
-        <button data-num class="grid-item" type="button">6</button>
-        <button data-cal class="grid-item" type="button">+</button>
-        <button data-num class="grid-item" type="button">1</button>
-        <button data-num class="grid-item" type="button">2</button>
-        <button data-num class="grid-item" type="button">3</button>
-        <button data-cal class="grid-item" type="button">-</button>
-        <button data-num class="grid-item" type="button">.</button>
-        <button data-num class="grid-item" type="button">0</button>
-        <button data-cal class="grid-item" type="button">/</button>
-        <button data-cal class="grid-item" type="button">x</button>
-        <button data-reset class="double-span" type="button">RESET</button>
-        <button data-equal class="double-span" type="button">=</button>
+    <div class="calculator-keys">
+        <div id="output">0</div>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button data-action="del">DEL</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button data-prevKey="operator" data-action="add">+</button>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button data-prevKey="operator" data-action="subtract">-</button>
+        <button data-action="decimal">.</button>
+        <button>0</button>
+        <button data-prevKey="operator" data-action="divide">/</button>
+        <button data-prevkey="operator" data-action="multiply">x</button>
+        <button class="double-span" data-action="reset">RESET</button>
+        <button class="double-span" data-action="equal">=</button>
+        <script src="calApp.js"></script>
     </div>
 </body>
+
 </html>
