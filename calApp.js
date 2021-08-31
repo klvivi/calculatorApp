@@ -7,10 +7,10 @@ keys.addEventListener('click', e => {
         const action = key.dataset.action;
         const keyContent = key.textContent;
         const outputResult = output.textContent;
-        const prevKey = key.dataset.prevKey;
+        const prevKey = keys.dataset.prevKey;
 
         if (!action) {
-            if (outputResult === '0') {
+            if (outputResult === '0' || prevKey === 'operator') {
                 output.textContent = keyContent;
             }
             else {
@@ -20,42 +20,46 @@ keys.addEventListener('click', e => {
         else {
             if (action === 'add' || action === 'subtract' ||
                 action === 'multiply' || action === 'divide') {
-                output.textContent = outputResult + keyContent;
+                keys.dataset.prevKey = 'operator';
+                keys.dataset.firsNum = outputResult;
+                keys.dataset.operator = action;
+            }
+            else if (action === 'decimal') {
+                output.textContent = outputResult + '.';
+            }
+            else if (action === 'equal') {
+                const firstNum = keys.dataset.firstNum;
+                const operator = keys.dataset.operator;
+                const secondNum = outputResult;
+                output.textContent = calculate(firstNum, operator, secondNum);
             }
             else if (action === 'del') {
                 output.textContent = outputResult.slice(0, -1);
             }
             else if (action === 'reset') {
+                keys.dataset.firstNum = '';
+                keys.dataset.operator = '';
+                keys.dataset.secondNum = '';
+                keys.dataset.prevKey = '';
                 output.textContent = '0';
-            }
-            else if (action === 'decimal') {
-                output.textContent = outputResult + '.';
-            }
-            else {
-                const display = outputResult;
-                const firstValue = display.substring(0, indexOf(action));
-                const operation = action;
-                const secondValue = display.substring(indexOf(action), indexOf(display.length()));
-
-                output.textContent = calculate(firstValue, operation, secondValue);
             }
         }
     }
 })
 
-const calculate = (firstValue, operation, secondValue) => {
+const calculate = (firstNum, operator, secondNum) => {
     let result = '';
-    if (operation === 'add') {
-        result = parseFloat(firstValue) + parseFloat(secondValue);
+    if (operator === 'add') {
+        result = parseFloat(firstNum) + parseFloat(secondNum);
     }
-    else if (operation === 'subtract') {
-        result = parseFloat(firstValue) - parseFloat(secondValue);
+    else if (operator === 'subtract') {
+        result = parseFloat(firstNum) - parseFloat(secondNum);
     }
-    else if (operation === 'multiply') {
-        result = parseFloat(firstValue) * parseFloat(secondValue);
+    else if (operator === 'multiply') {
+        result = parseFloat(firstNum) * parseFloat(secondNum);
     }
-    else if (operation === 'divide') {
-        result = parseFloat(firstValue) / parseFloat(secondValue);
+    else if (operator === 'divide') {
+        result = parseFloat(firstNum) / parseFloat(secondNum);
     }
     return result;
 }
