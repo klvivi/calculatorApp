@@ -11,6 +11,7 @@ keys.addEventListener('click', e => {
 
         if (!action) {
             if (outputResult === '0' || prevKey === 'operator') {
+                keys.dataset.prevKey = 'number';
                 output.textContent = keyContent;
             }
             else {
@@ -25,18 +26,22 @@ keys.addEventListener('click', e => {
                 keys.dataset.operator = action;
             }
             else if (action === 'decimal') {
+                keys.dataset.prevKey = 'decimal';
                 output.textContent = outputResult + '.';
             }
             else if (action === 'equal') {
+                keys.dataset.prevKey = "equal";
                 const firstNum = keys.dataset.firstNum;
                 const operator = keys.dataset.operator;
                 const secondNum = outputResult;
                 output.textContent = calculate(firstNum, operator, secondNum);
             }
             else if (action === 'del') {
+                keys.dataset.prevKey = "del";
                 output.textContent = outputResult.slice(0, -1);
             }
             else if (action === 'reset') {
+                keys.dataset.prevKey = "reset";
                 keys.dataset.firstNum = '';
                 keys.dataset.operator = '';
                 keys.dataset.secondNum = '';
