@@ -22,7 +22,7 @@ keys.addEventListener('click', e => {
             if (action === 'add' || action === 'subtract' ||
                 action === 'multiply' || action === 'divide') {
                 keys.dataset.prevKey = 'operator';
-                keys.dataset.firsNum = outputResult;
+                keys.dataset.firstNum = outputResult;
                 keys.dataset.operator = action;
             }
             else if (action === 'decimal') {
