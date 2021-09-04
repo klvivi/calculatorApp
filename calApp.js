@@ -27,7 +27,9 @@ keys.addEventListener('click', e => {
             }
             else if (action === 'decimal') {
                 keys.dataset.prevKey = 'decimal';
-                output.textContent = outputResult + '.';
+                if (!outputResult.includes('.')) {
+                    output.textContent = outputResult + '.';
+                }
             }
             else if (action === 'equal') {
                 keys.dataset.prevKey = "equal";
@@ -65,6 +67,9 @@ const calculate = (firstNum, operator, secondNum) => {
     }
     else if (operator === 'divide') {
         result = parseFloat(firstNum) / parseFloat(secondNum);
+    }
+    else if (!operator) {
+        result = outputResult;
     }
     return result;
 }
