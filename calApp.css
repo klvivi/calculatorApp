@@ -18,7 +18,7 @@ body {
 
 .calculator-keys button {
     background-color: rgb(249, 249, 224);
-    border-color: rgb(251, 255, 255);
+    border-color: rgb(251, 255, 250);
     outline: none;
 }
 
